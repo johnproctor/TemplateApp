@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoFixture.AutoEF">
-      <HintPath>..\packages\AutoFixture.AutoEF.0.2.0\lib\net45\AutoFixture.AutoEF.dll</HintPath>
-    </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
@@ -115,6 +112,7 @@
   <ItemGroup>
     <Compile Include="Model\RepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Attribute.cs" />
     <Compile Include="Web\Controllers\HomeControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +125,10 @@
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{084e7d51-6fba-4a05-bf54-7d1bbcc48538}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\AutoFixture.AutoEF\AutoFixture.AutoEF.csproj">
+      <Project>{794a3b63-aa2e-494e-818c-42561805775f}</Project>
+      <Name>AutoFixture.AutoEF</Name>
     </ProjectReference>
     <ProjectReference Include="..\Web\Web.csproj">
       <Project>{0FC07623-5C0F-4FD8-918C-8B6ACFB6833D}</Project>
