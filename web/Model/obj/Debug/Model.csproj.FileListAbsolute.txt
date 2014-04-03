@@ -1,0 +1,10 @@
+C:\Users\John.Proctor\Desktop\Template\web\Model\bin\Debug\Model.dll.config
+C:\Users\John.Proctor\Desktop\Template\web\Model\bin\Debug\Model.dll
+C:\Users\John.Proctor\Desktop\Template\web\Model\bin\Debug\Model.pdb
+C:\Users\John.Proctor\Desktop\Template\web\Model\bin\Debug\EntityFramework.dll
+C:\Users\John.Proctor\Desktop\Template\web\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\John.Proctor\Desktop\Template\web\Model\bin\Debug\EntityFramework.xml
+C:\Users\John.Proctor\Desktop\Template\web\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\John.Proctor\Desktop\Template\web\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\John.Proctor\Desktop\Template\web\Model\obj\Debug\Model.dll
+C:\Users\John.Proctor\Desktop\Template\web\Model\obj\Debug\Model.pdb
