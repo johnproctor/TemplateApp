@@ -16,9 +16,9 @@ namespace Model.Repository
 
         Task<Int32> InsertAsync<TEntity>(TEntity entity) where TEntity : class;
 
-        Task<Int32> Delete<TEntity>(object id) where TEntity : class;
+        Task<Int32> DeleteAsync<TEntity>(object id) where TEntity : class;
 
-        Task<Int32> Update<TEntity>(TEntity entityToUpdate) where TEntity : class;
+        Task<Int32> UpdateAsync<TEntity>(TEntity entityToUpdate) where TEntity : class;
     }
 
     public class GenericRepository : IGenericRepository
@@ -46,9 +46,9 @@ namespace Model.Repository
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<Int32> Delete<TEntity>(object id) where TEntity : class
+        public async Task<Int32> DeleteAsync<TEntity>(object id) where TEntity : class
         {
-            var entityToDelete = _context.Set<TEntity>().Find(id);
+            var entityToDelete = await _context.Set<TEntity>().FindAsync(id);
             if (_context.Entry(entityToDelete).State == EntityState.Detached)
             {
                 _context.Set<TEntity>().Attach(entityToDelete);
@@ -58,7 +58,7 @@ namespace Model.Repository
         }
 
 
-        public async Task<Int32> Update<TEntity>(TEntity entityToUpdate) where TEntity : class
+        public async Task<Int32> UpdateAsync<TEntity>(TEntity entityToUpdate) where TEntity : class
         {
             _context.Set<TEntity>().Attach(entityToUpdate);
             _context.Entry(entityToUpdate).State = EntityState.Modified;

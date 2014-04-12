@@ -37,5 +37,19 @@ namespace Web.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public void DiscoveryMailboxAnnotate(DiscoveryMailboxAnnotateViewModel model) 
+        {
+            if (!ModelState.IsValid)
+            { 
+            }   
+        }
+
+        public class DiscoveryMailboxAnnotateViewModel
+        {
+            public string Note { get; set; }
+            public List<string> Ids { get; set; }
+        }
     }
 }

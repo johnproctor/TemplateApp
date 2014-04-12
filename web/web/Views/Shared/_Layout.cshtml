@@ -46,5 +46,24 @@
             .Add("/Scripts/bootstrap.js")      
         .MvcRender("~/bundles/#.min.js"))
     @RenderSection("scripts", required: false)
+
+<script>
+    var model = {
+        Note: 'note',
+        Ids: ['11', '20', '30']
+    };
+    $.ajax({
+        type: "POST",
+        url: '/Home/DiscoveryMailboxAnnotate',
+        data: JSON.stringify(model),
+        dataType: 'json',
+        contentType: 'application/json',
+        error: function (xhr, status, error) {
+        },
+        success: function (response) {
+
+        }
+    });
+</script>
 </body>
 </html>
