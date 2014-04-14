@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Web.Attributes;
 using Web.Services;
 
 namespace Web.Controllers
@@ -11,10 +12,13 @@ namespace Web.Controllers
     {
         private readonly IFooService _fooService;
 
-        public HomeController(IFooService fooService)
+        public HomeController(IFooService fooService, [ConfigDependency] String mySetting)
         {
             if (fooService == null)
                 throw new ArgumentNullException("fooService");
+
+            if (String.IsNullOrEmpty(mySetting))
+                throw new ArgumentNullException("mySetting");
 
             _fooService = fooService;
         }
@@ -36,20 +40,6 @@ namespace Web.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
-        }
-
-        [HttpPost]
-        public void DiscoveryMailboxAnnotate(DiscoveryMailboxAnnotateViewModel model) 
-        {
-            if (!ModelState.IsValid)
-            { 
-            }   
-        }
-
-        public class DiscoveryMailboxAnnotateViewModel
-        {
-            public string Note { get; set; }
-            public List<string> Ids { get; set; }
         }
     }
 }
